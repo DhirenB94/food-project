@@ -24,7 +24,7 @@ router.get('/recipes/create', async(req, res) => {
 router.post('/recipes/create', fileUpload.single('image'), async (req, res) => {
   const imgOnCloudinary = req.file.path;
 
-  const { pictureUrl, 
+  const { 
     name, 
     cuisine, 
     prepTime, 
@@ -58,6 +58,7 @@ router.get('/recipes/:id', async (req, res) => {
 
   res.render('recipe-details', {recipe});
 });
+
 
 //Edit and post individual recipe
 router.get('/recipes/:id/edit', async (req, res) => {
@@ -96,9 +97,30 @@ router.post('/recipes/:id/edit', async (req, res) => {
   res.redirect('/recipes');
 });
 
+
+//Delete recipe
 router.post('/recipes/:id/delete', async (req, res) => {
-  const 
-})
+  const recipeId = req.params.id;
+
+  await Recipe.findByIdAndDelete(recipeId);
+
+  res.redirect('/recipes');
+});
+
+
+//Post reviews
+router.post('/reviews/:id/add', async (req, res) => {
+  const recipeId = req.params.id;
+
+  //Need user, comment names in hbs
+  const { user, comment } = req.body;
+
+  await Recipe.findByIdAndUpdate(recipeId, {
+    $push: { review: { user, comment }}
+  });
+
+  res.redirect(`/recipes/${recipeId}`);
+});
 
 
 module.exports = router;

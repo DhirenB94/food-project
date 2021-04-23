@@ -50,10 +50,10 @@ const index = require('./routes/index');
 app.use('/', index);
 
 const auth = require('./routes/auth');
-app.use('/auth', auth);
+app.use('/', auth);
 
 const recipe = require('./routes/recipe');
-app.use('/recipe', recipe);
+app.use('/', recipe);
 
 
 module.exports = app;
