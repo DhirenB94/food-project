@@ -50,15 +50,11 @@ app.locals.title = 'Food Project';
 const index = require('./routes/index');
 app.use('/', index);
 
+const auth = require('./routes/auth');
+app.use('/auth', auth);
+
+const recipe = require('./routes/recipe');
+app.use('/recipe', recipe);
+
 
 module.exports = app;
-
-
-
-// Application ID
-// 82792cbf
-
-// This is the application ID, you should send with each API request.
-
-// Application Keys
-// 0a82963348eb99852d5ad1c860b2eebb	
