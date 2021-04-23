@@ -34,8 +34,14 @@ const recipeSchema = new Schema ({
   },
   allergy: {
     type: String,
-    enum : ['Nuts', 'Seafood'],
-  }
+    enum : ['Nuts', 'Seafood']
+  },
+  reviews: [
+    {
+      user: String,
+      comment: String
+    }
+  ]
 
 // by: {{username}}
 
