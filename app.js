@@ -10,6 +10,8 @@ const logger       = require('morgan');
 const path         = require('path');
 
 
+
+
 mongoose
   .connect('mongodb://localhost/food-project', {useNewUrlParser: true,  useUnifiedTopology: true})
   .then(x => {
@@ -50,3 +52,13 @@ app.use('/', index);
 
 
 module.exports = app;
+
+
+
+// Application ID
+// 82792cbf
+
+// This is the application ID, you should send with each API request.
+
+// Application Keys
+// 0a82963348eb99852d5ad1c860b2eebb	
