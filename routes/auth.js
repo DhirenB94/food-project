@@ -52,6 +52,13 @@ router.post('/signup', async (req, res) => {
     })
     return;
   }
+/*
+  const passwordRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/
+  if (passwordRegex.test(password) === false) {
+    res.render('auth/signup', 
+    { errorMessage: 'Password is too weak' })
+    return;
+  }*/
 
   const user = await User.findOne({ username: username });
 
@@ -61,20 +68,13 @@ router.post('/signup', async (req, res) => {
     })
     return;
   }
-/*
-  const passwordRegex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/
-  if (passwordRegex.test(password) === false) {
-    res.render('auth/signup', 
-    { errorMessage: 'Password is too weak' })
-    return;
-  }*/
+
   const saltRounds = 10;
   const salt = bcrypt.genSaltSync(saltRounds);
   const hashedPassword = bcrypt.hashSync(password, salt);
   
   await User.create({
     username,
-    email,
     password: hashedPassword
   });
 

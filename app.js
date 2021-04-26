@@ -8,9 +8,11 @@ const hbs          = require('hbs');
 const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
+const helpers      = require('handlebars-helpers');
+const session      = require('express-session');
+const MongoStore   = require('connect-mongo')(session);
 
-
-
+hbs.registerHelper(helpers());
 
 mongoose
   .connect('mongodb://localhost/food-project', {useNewUrlParser: true,  useUnifiedTopology: true})
@@ -27,13 +29,32 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 const app = express();
 
 // Middleware Setup
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-// Express View engine setup
-      
+
+//Express session setup
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    cookie: {
+      sameSite: true,
+      httpOnly: true,
+      maxAge: 60000
+    },
+    rolling: true,
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 60 *60 *24 
+    })
+  })
+)
+
+// Express View engine setup    
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -49,11 +70,14 @@ app.locals.title = 'Food Project';
 const index = require('./routes/index');
 app.use('/', index);
 
-const auth = require('./routes/auth');
-app.use('/', auth);
-
 const recipe = require('./routes/recipe');
 app.use('/', recipe);
+
+const nutrients = require('./routes/nutrients');
+app.use('/', nutrients);
+
+const auth = require('./routes/auth');
+app.use('/', auth);
 
 
 module.exports = app;
