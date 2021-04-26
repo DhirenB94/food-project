@@ -1,0 +1,21 @@
+<div>
+  <ul>
+    {{#each foods}}
+      <div>
+        <h2>{{food.label}}</h2>
+        {{#if food.image}}
+          <br>
+          <img src="{{food.image}}" alt="{{food.label}}">
+          <br>
+        {{/if}}
+      </div>
+      <div>
+        <li>Energy: {{food.nutrients.ENERC_KCAL}} KCAL</li>
+        <li>Lipids: {{food.nutrients.FAT}}</li>
+        <li>Carbohydrates: {{food.nutrients.CHOCDF}}</li>
+        <li>Dietary Fibre: {{food.nutrients.FIBTG}}</li>
+        <li>Protein: {{food.nutrients.PROCNT}}</li>
+      </div>
+    {{/each}}
+  </ul>
+</div>
