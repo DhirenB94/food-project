@@ -48,7 +48,7 @@ const recipes = [
       'Try the rice – it should feel just cooked with a slight bite to it. Stir in the asparagus tips and any last dregs of stock and cook for 1 or 2 mins more. Remove from the heat and top with the remaining butter and most of the parmesan. Season generously, cover and leave for a few minutes to settle.',
       'Give the risotto a thorough stir to incorporate the butter and cheese and serve straight away with the remaining parmesan for sprinkling over.'
     ],
-    suitable: 'Vegetarian'
+    suitable: ['Vegetarian']
   },
   {
     pictureUrl: 'https://images.immediate.co.uk/production/volatile/sites/30/2020/08/recipe-image-legacy-id-192585_12-a46c1fb.jpg?quality=90&webp=true&resize=440,400',
@@ -62,7 +62,7 @@ const recipes = [
       '4 tbsp caster sugar', 'few drops vanilla extract', '2 tbsp good-quality strawberry jam',
       '100g strawberry , hulled and sliced'
     ],
-    suitable: 'Vegetarian'
+    suitable: ['Vegetarian']
   }
 ];
 

@@ -1,0 +1,16 @@
+<h2>List of recipes</h2>
+<a href="/">Home</a>
+<hr>
+
+{{#each recipesFromDB}}
+  <h3>
+    <a href="/recipes/{{id}}">{{name}}</a>
+  </h3>
+  <img src={{pictureUrl}} />
+  <br>
+  <a href="/recipes/{{id}}/edit">Edit</a>
+  
+  <form action="/recipes/{{id}}/delete" method="POST">
+    <button type="submit">Delete</button>
+  </form>
+{{/each}}

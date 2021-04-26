@@ -1,2 +1,18 @@
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+
+{{#if user}}
+  Welcome {{user.username}}
+  <form action="/logout" method="POST">
+    <button type="submit">Logout</button>
+  </form>
+{{else}}
+  <a href="/signup">Sign Up</a>
+  <a href="/login">Login</a>
+{{/if}}
+
+
+
+<a href="/recipes">See Recipes</a>
+<a href="/recipes/create">Add a recipe</a> 
+{{!-- make it so you need to be logged in to add a recipe - redirect to please log in --}}

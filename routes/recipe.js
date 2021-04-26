@@ -22,8 +22,8 @@ router.get('/recipes/create', async(req, res) => {
 });
 
 router.post('/recipes/create', fileUpload.single('image'), async (req, res) => {
-  const imgOnCloudinary = req.file.path;
-
+ const imgOnCloudinary = req.file.path;
+ try {
   const { 
     name, 
     cuisine, 
@@ -35,6 +35,9 @@ router.post('/recipes/create', fileUpload.single('image'), async (req, res) => {
     suitable, 
     allergy} = req.body;
 
+    let ingredientsList = ingredients.split(",")
+    let methodList = method.split(".")
+
   await Recipe.create({
     pictureUrl: imgOnCloudinary, 
     name, 
@@ -42,13 +45,17 @@ router.post('/recipes/create', fileUpload.single('image'), async (req, res) => {
     prepTime, 
     cookTime, 
     serves, 
-    ingredients, 
-    method, 
+    ingredients: ingredientsList, 
+    method: methodList,
     suitable, 
     allergy
   });
 
   res.redirect('/recipes');
+
+} catch(e) {
+  console.log(e)
+}
 });
 
 //Get individual recipe
@@ -67,10 +74,10 @@ router.get('/recipes/:id/edit', async (req, res) => {
   res.render('recipe-edit', {recipe});
 });
 
-router.post('/recipes/:id/edit', async (req, res) => {
-  const recipeId = await Recipe.findById(req.params,id);
-
-  const { pictureUrl, 
+router.post('/recipes/:id/edit', fileUpload.single('image'), async (req, res) => {
+ // const imgOnCloudinary = req.file.path;
+ console.log('body', req.body);
+  const { 
     name, 
     cuisine, 
     prepTime, 
@@ -81,20 +88,39 @@ router.post('/recipes/:id/edit', async (req, res) => {
     suitable, 
     allergy} = req.body;
 
-  await Recipe.findByIdAndUpdate(recipeId, {
-    pictureUrl, 
-    name, 
-    cuisine, 
-    prepTime, 
-    cookTime, 
-    serves, 
-    ingredients, 
-    method, 
-    suitable, 
-    allergy
-  });
+    let ingredientsList = ingredients.split(",")
+    let methodList = method.split(".")
+
+  if (req.file) {
+    await Recipe.findByIdAndUpdate(req.params.id,{
+      name, 
+      cuisine, 
+      prepTime, 
+      cookTime, 
+      serves, 
+      ingredients: ingredientsList, 
+      method: methodList,
+      suitable, 
+      allergy,
+      pictureUrl: req.file.path
+    });
+  } else  {
+    await Recipe.findByIdAndUpdate(req.params.id,{
+      name, 
+      cuisine, 
+      prepTime, 
+      cookTime, 
+      serves, 
+      ingredients: ingredientsList, 
+      method: methodList,
+      suitable, 
+      allergy
+    });
+  }
+ 
 
   res.redirect('/recipes');
+
 });
 
 

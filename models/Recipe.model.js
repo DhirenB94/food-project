@@ -22,18 +22,20 @@ const recipeSchema = new Schema ({
   },
   ingredients: {
     type: [String],
-    required: true
+    required: true,
+    trim: true
   },
   method: {
     type: [ String ],
-    required: true
+    required: true,
+    trim: true
   },
   suitable: {
-    type: String,
+    type: [String],
     enum : ['Vegetarian', 'Vegan', 'Lactose free', 'Gluten free']
   },
   allergy: {
-    type: String,
+    type: [String],
     enum : ['Nuts', 'Seafood']
   },
   reviews: [
