@@ -4,25 +4,27 @@ body {
   background-repeat: no-repeat;
 }
 
-.homepage-text {
+.homepage-box {
   text-align: center;
   color: white;
   display: flex;
   flex-direction: column;
-  margin-top: 15%;
+  margin-top: 10%;
+  color: rgb(106, 190, 97)
 
 }
 
-.homepage-text h1 {
+.homepage-box h1 {
   font-size: 50px;
   margin-bottom: 5%;
 }
 
 .homepage-button{
-  border: solid 1.5px orange;
+  border: solid 1.5px rgb(106, 190, 97);
   font-size: 20px;
   padding: 10px 25px;
   color: white;
   margin-left:40%;
   margin-right:40%;
+  text-decoration: none;
 }
