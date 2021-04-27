@@ -49,7 +49,7 @@ app.use(
     rolling: true,
     store: new MongoStore({
       mongooseConnection: mongoose.connection,
-      ttl: 60 *60
+      ttl: 60 *60 *24
     })
   })
 )

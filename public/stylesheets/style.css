@@ -1,6 +1,5 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
 }
 
 a {
@@ -11,3 +10,7 @@ a {
   justify-content: space-between;
 }
 
+h2 {
+  margin-top: 50%;
+  text-align: center;
+}
