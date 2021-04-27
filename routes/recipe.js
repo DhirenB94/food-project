@@ -8,7 +8,10 @@ router.get('/recipes', async (req, res)=> {
 
   try {
     const recipesFromDB = await Recipe.find();
-    res.render('recipes', {recipesFromDB});
+
+    const user = req.session.currentUser;
+
+    res.render('recipes', {recipesFromDB, user});
 
   }catch(e) {
     res.render('error');
@@ -18,7 +21,8 @@ router.get('/recipes', async (req, res)=> {
 
 //Create and post recipes
 router.get('/recipes/create', async(req, res) => {
-  res.render('recipes-create');
+  const user = req.session.currentUser;
+  res.render('recipes-create', {user});
 });
 
 router.post('/recipes/create', fileUpload.single('image'), async (req, res) => {
@@ -63,7 +67,9 @@ router.get('/recipes/:id', async (req, res) => {
 
   const recipe = await Recipe.findById(req.params.id);
 
-  res.render('recipe-details', {recipe});
+  const user = req.session.currentUser;
+
+  res.render('recipe-details', {recipe, user});
 });
 
 
@@ -71,7 +77,10 @@ router.get('/recipes/:id', async (req, res) => {
 router.get('/recipes/:id/edit', async (req, res) => {
   
   const recipe = await Recipe.findById(req.params.id);
-  res.render('recipe-edit', {recipe});
+
+  const user = req.session.currentUser;
+
+  res.render('recipe-edit', {recipe, user});
 });
 
 router.post('/recipes/:id/edit', fileUpload.single('image'), async (req, res) => {

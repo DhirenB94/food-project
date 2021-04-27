@@ -1,58 +1,64 @@
-<h2>{{recipe.name}}</h2>
-<p>Uploaded By: {{user}}</p>
-<img src="{{recipe.pictureUrl}}"/>
+{{#if user}}
+  <h2>{{recipe.name}}</h2>
+  <p>Uploaded By: {{user}}</p>
+  <img src="{{recipe.pictureUrl}}"/>
 
-<p>Prep time: {{recipe.prepTime}} || Cooking time: {{recipe.cookTime}} || Serves: {{recipe.serves}}</p>
-{{#if recipe.cuisine}}
-  Cuisine: {{recipe.cuisine}}
+  <p>Prep time: {{recipe.prepTime}} || Cooking time: {{recipe.cookTime}} || Serves: {{recipe.serves}}</p>
+  {{#if recipe.cuisine}}
+    Cuisine: {{recipe.cuisine}}
+  {{/if}}
+
+  <ul> <h4> Ingredients</h4>
+      {{#each recipe.ingredients}}
+          <li>{{this}}</li>
+      {{/each}}
+  </ul>
+
+  <ol> <h4> Instructions</h4>
+      {{#each recipe.method}}
+          <li>{{this}}</li>
+      {{/each}}
+  </ol>
+
+  {{#if recipe.suitable}}
+    <p>Suitable for:
+      {{#each recipe.suitable}}
+      {{this}}
+      {{/each}}
+    </p>
+  {{/if}}
+
+  {{#if recipe.allergy}}
+    <p>Allergy Information:
+      {{#each recipe.allergy}}
+      {{this}}
+      {{/each}}
+    </p>
+  {{/if}}
+
+  <hr>
+
+  <p><u>Add a review</u></p>
+  <form action="/reviews/{{recipe.id}}/add" method="POST">
+    <label>User</label>
+    <input type="text" name="user"/>
+
+    <label>Comment</label>
+    <textarea name="comment"></textarea>
+
+    <button type="submit">Add Review</button>
+  </form>
+  <hr>
+  <h4>Reviews:</h4>
+  {{#each recipe.review}}
+    <p>{{comment}} -- {{user}}</p>
+  {{/each}}
+
+{{else}}
+  <h2>{{recipe.name}}</h2>
+  <p>Uploaded By: {{user}}</p>
+  <img src="{{recipe.pictureUrl}}"/>
 {{/if}}
-
-<ul> <h4> Ingredients</h4>
-    {{#each recipe.ingredients}}
-        <li>{{this}}</li>
-    {{/each}}
-</ul>
-
-<ol> <h4> Instructions</h4>
-    {{#each recipe.method}}
-        <li>{{this}}</li>
-    {{/each}}
-</ol>
-
-{{#if recipe.suitable}}
-  <p>Suitable for:
-    {{#each recipe.suitable}}
-    {{this}}
-    {{/each}}
-  </p>
-{{/if}}
-
-{{#if recipe.allergy}}
-  <p>Allergy Information:
-    {{#each recipe.allergy}}
-    {{this}}
-    {{/each}}
-  </p>
-{{/if}}
-
-<hr>
-
-<p><u>Add a review</u></p>
-<form action="/reviews/{{recipe.id}}/add" method="POST">
-  <label>User</label>
-  <input type="text" name="user"/>
-
-  <label>Comment</label>
-  <textarea name="comment"></textarea>
-
-  <button type="submit">Add Review</button>
-</form>
-<hr>
-<h4>Reviews:</h4>
-{{#each recipe.review}}
-  <p>{{comment}} -- {{user}}</p>
-{{/each}}
-
 
 <a href="/">Home</a>
 

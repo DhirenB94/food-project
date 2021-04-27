@@ -1,51 +1,52 @@
-<h2>Add a recipe!</h2>
+{{#if user}}
+    <h2>Add a recipe!</h2>
 
-<form action="/recipes/create" method="POST" enctype="multipart/form-data">
-  <label>Title of Dish</label>
-  <input type="text" name="name" required/>
+    <form action="/recipes/create" method="POST" enctype="multipart/form-data">
+    <label>Title of Dish</label>
+    <input type="text" name="name" required/>
 
-  <label>Cusine</label>
-  <input type="text" name="cuisine"/>
+    <label>Cusine</label>
+    <input type="text" name="cuisine"/>
 
-  <label>Prep Time</label>
-  <input type="text" name="prepTime" required/>
+    <label>Prep Time</label>
+    <input type="text" name="prepTime" required/>
 
-  <label> Cook time</label>
-  <input type="text" name="cookTime" required/>
+    <label> Cook time</label>
+    <input type="text" name="cookTime" required/>
 
-  <label>Serves</label>
-  <input type="number" name="serves" required/>
+    <label>Serves</label>
+    <input type="number" name="serves" required/>
 
-  <label>Ingredients (Please seperate each ingredient with a comma) </label>
-  <textarea name="ingredients" rows="8" cols="12" required></textarea>
+    <label>Ingredients (Please seperate each ingredient with a comma) </label>
+    <textarea name="ingredients" rows="8" cols="12" required></textarea>
 
-  <label>Instructions (Please seperate each instruction with a full stop)</label>
-  <textarea name="method" rows="8" cols="12" required></textarea>
-
-
-  <label>Suitable for:</label>
-      <label>Vegetarian</label>
-      <input type="checkbox" name="suitable" value="Vegetarian">
-      <label>Vegan</label>
-      <input type="checkbox" name="suitable" value="Vegan">
-      <label>Lactose Free</label>
-      <input type="checkbox" name="suitable" value="Lactose Free">
-      <label>Gluten Free</label>
-      <input type="checkbox" name="suitable" value="Gluten Free">
+    <label>Instructions (Please seperate each instruction with a full stop)</label>
+    <textarea name="method" rows="8" cols="12" required></textarea>
 
 
+    <label>Suitable for:</label>
+        <label>Vegetarian</label>
+        <input type="checkbox" name="suitable" value="Vegetarian">
+        <label>Vegan</label>
+        <input type="checkbox" name="suitable" value="Vegan">
+        <label>Lactose Free</label>
+        <input type="checkbox" name="suitable" value="Lactose Free">
+        <label>Gluten Free</label>
+        <input type="checkbox" name="suitable" value="Gluten Free">
 
-  <label>Allergy Information:</label>
-      <label>Nuts</label>
-      <input type="checkbox" name="allergy" value="Nuts">
-      <label>Seafood</label>
-      <input type="checkbox" name="allergy" value="Seafood">
 
-<label>Image</label>
-<input type="file" name="image"/>
 
-<button type="submit">Add!</button>  
+    <label>Allergy Information:</label>
+        <label>Nuts</label>
+        <input type="checkbox" name="allergy" value="Nuts">
+        <label>Seafood</label>
+        <input type="checkbox" name="allergy" value="Seafood">
 
-</form>
+    <label>Image</label>
+    <input type="file" name="image"/>
 
+    <button type="submit">Add!</button>  
+
+    </form>
+{{/if}}
 <a href="/">Home</a>

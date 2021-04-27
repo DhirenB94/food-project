@@ -12,9 +12,10 @@ const client = new FoodDatabaseClient({
 router.get('/food-search', async (req, res, next) => {    
   try {
     let foodSearch = req.query.foodSearch;
+    console.log('foodsearch', foodSearch);
     const food = await client.search({query: foodSearch});
-
-    res.render('food-search-results', {foods: food.hints});
+    console.log('result', food);
+    res.render('food-search-results', {foods: food.hints, user: req.session.currentUser});
     
     console.log(food.hints.label);
 

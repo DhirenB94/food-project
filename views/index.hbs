@@ -2,26 +2,11 @@
   <h1>{{title}}</h1>
   <p>Welcome to {{title}}</p>
 
-  {{#if user}}
-    Welcome {{user.username}}
-    <form action="/logout" method="POST">
-      <button type="submit">Logout</button>
-    </form>
-  {{else}}
-    <a href="/signup">Sign Up</a>
-    <br>
-    <a href="/login">Login</a>
-    <br>
-  {{/if}}
 
-
-
-  <a href="/recipes">See Recipes</a>
-  <br>
-  <a href="/recipes/create">Add a recipe</a>
 </div>
-{{!-- make it so you need to be logged in to add a recipe - redirect to please log in --}}
 
+{{!-- make it so you need to be logged in to add a recipe - redirect to please log in --}}
+{{!--    <a href="/recipes">See Recipes</a>   --}}
 
 {{!-- <form action="/food-search" method="get">
     <input type="text" name="foodSearch" id="" placeholder="Insert food here...">

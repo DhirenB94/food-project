@@ -8,9 +8,12 @@
   </h3>
   <img src={{pictureUrl}} />
   <br>
-  <a href="/recipes/{{id}}/edit">Edit</a>
-  
-  <form action="/recipes/{{id}}/delete" method="POST">
-    <button type="submit">Delete</button>
-  </form>
+    {{#if ../user}}
+    <a href="/recipes/{{id}}/edit">Edit</a>
+    <form action="/recipes/{{id}}/delete" method="POST">
+      <button type="submit">Delete</button>
+    </form>
+  {{/if}}
 {{/each}}
+
+
