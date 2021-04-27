@@ -1,6 +1,9 @@
+<link rel="stylesheet" href="/stylesheets/index.css">
+
+<div class="container">
 <div class="homepage-text">
   <h1>{{title}}</h1>
-  <p>Welcome to {{title}}</p>
+  <p>Browse through recipes, search nutritional information, upload your own recipes! </p>
 
   {{#if user}}
     Welcome {{user.username}}
@@ -14,16 +17,16 @@
     <br>
   {{/if}}
 
+  
+
 
 
   <a href="/recipes">See Recipes</a>
   <br>
   <a href="/recipes/create">Add a recipe</a>
 </div>
+</div>
 {{!-- make it so you need to be logged in to add a recipe - redirect to please log in --}}
 
 
-{{!-- <form action="/food-search" method="get">
-    <input type="text" name="foodSearch" id="" placeholder="Insert food here...">
-    <button type="submit"> Find food! </button>
-</form> --}}
+
