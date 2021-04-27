@@ -1,22 +1,29 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div class="homepage-text">
+  <h1>{{title}}</h1>
+  <p>Welcome to {{title}}</p>
 
-{{#if user}}
-  Welcome {{user.username}}
-  <form action="/logout" method="POST">
-    <button type="submit">Logout</button>
-  </form>
-{{else}}
-  <a href="/signup">Sign Up</a>
-  <a href="/login">Login</a>
-{{/if}}
+  {{#if user}}
+    Welcome {{user.username}}
+    <form action="/logout" method="POST">
+      <button type="submit">Logout</button>
+    </form>
+  {{else}}
+    <a href="/signup">Sign Up</a>
+    <br>
+    <a href="/login">Login</a>
+    <br>
+  {{/if}}
 
 
 
-<a href="/recipes">See Recipes</a>
-<a href="/recipes/create">Add a recipe</a> 
+  <a href="/recipes">See Recipes</a>
+  <br>
+  <a href="/recipes/create">Add a recipe</a>
+</div>
 {{!-- make it so you need to be logged in to add a recipe - redirect to please log in --}}
-<form action="/food-search" method="get">
+
+
+{{!-- <form action="/food-search" method="get">
     <input type="text" name="foodSearch" id="" placeholder="Insert food here...">
     <button type="submit"> Find food! </button>
-</form>
+</form> --}}
