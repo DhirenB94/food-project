@@ -26,13 +26,14 @@
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/recipes/create">Add recipe</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
-        </li>
       </ul>
       <form class="d-flex" action="/food-search" method="get">
-        <input class="form-control me-2" type="search" name="foodSearch" placeholder="Nutritional Information" aria-label="Search">
+        <input class="form-control me-2" type="search" name="foodSearch" placeholder="Nutritional Info" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+
+      <form action="/logout" method="post">
+        <button class="btn btn-outline-info" aria-current="page" type="submit">Logout</button>
       </form>
     </div>
   </div>

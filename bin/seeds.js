@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const Recipe = require('../models/Recipe.model');
 require('dotenv').config();
 
-const DB_NAME = 'food-project';
-mongoose.connect(procces.env.MONGODB_URI, {
+
+mongoose.connect(process.env.MONGODB_URI, {
   useCreateIndex: true,
   useNewUrlParser: true,
   useUnifiedTopology: true
