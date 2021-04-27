@@ -1,18 +1,40 @@
-<h2>Sign up</h2>
+<link rel="stylesheet" href="/stylesheets/auth.css">
 
-<form action="/signup" method="post">
-<label>Username</label>
-<input type="text" name="username">
-<br>
+<div class="container">
+    <div class="auth-box">
+      <form action="/signup" method="POST">
+        <div class="mb-3">
+          <label class="form-label auth">Signup!</label>
+          <input type="text" class="form-control user-input-box" name="username" placeholder="Username">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Password must be at least 6 characters long and contain at least 1 lowercase, 1 uppercase and 1 number</label>
+          <input type="text" class="form-control user-input-box" name="password" placeholder="Password">
+        </div>
+        <div class="mb-3">
+        <button type="submit" class="btn btn-warning">Create an account</button>
+        </div>
+      </form>
+    {{#if errorMessage}}
+        <p>{{errorMessage}}</p>
+    {{/if}}
+    </div>
+</div>
 
-<label>Password</label>
-<input type="text" name="password">
-<br>
 
-<button type="submit">Create an account</button>
+      {{!-- <h2>Sign up</h2>
 
-</form>
+      <form action="/signup" method="post">
+      <label>Username</label>
+      <input type="text" name="username">
 
-{{#if errorMessage}}
-  <p>{{errorMessage}}</p>
-{{/if}}
+      <label>Password</label>
+      <input type="text" name="password">
+
+      <button type="submit">Create an account</button>
+
+      </form>
+
+      {{#if errorMessage}}
+        <p>{{errorMessage}}</p>
+      {{/if}} --}}

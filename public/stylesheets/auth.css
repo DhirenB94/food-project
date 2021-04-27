@@ -1,0 +1,27 @@
+body {
+  background-image: url('../images/food-homepage.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.auth-box {
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    width: 50%;
+    margin-left: 25%;;
+}
+
+.auth {
+  font-size: 30px;
+}
+
+.user-input-box{
+  width: 75%;
+  margin-left: 12.5%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
