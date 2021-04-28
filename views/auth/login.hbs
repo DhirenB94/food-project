@@ -1,13 +1,10 @@
 <link rel="stylesheet" href="/stylesheets/auth.css">
 
-
-
-
 <div class="container">
     <div class="auth-box">
       <form action="/login" method="POST">
         <div class="mb-3">
-          <label class="form-label auth">Login!</label>
+          <label class="form-label auth">Login</label>
           <input type="text" class="form-control user-input-box" name="username" placeholder="Username">
         </div>
         <div class="mb-3">
@@ -19,6 +16,7 @@
         <p>Don't have an account? Register <a href="/signup">here</a></p>
         </div>
       </form>
+
     {{#if errorMessage}}
         <p>{{errorMessage}}</p>
     {{/if}}

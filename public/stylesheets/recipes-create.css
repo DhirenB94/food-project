@@ -1,0 +1,20 @@
+body {
+  background-image: url('../images/strawberry.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h2 {
+  margin-top: 3%;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+.form-page {
+  margin-left: 3%;
+  color: black;
+}
+
+.button-add {
+  text-align: center;
+}

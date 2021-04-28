@@ -10,7 +10,6 @@ a {
   justify-content: space-between;
 }
 
-h2 {
-  margin-top: 50%;
-  text-align: center;
+.login-class{
+  margin: 3%;
 }

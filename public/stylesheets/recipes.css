@@ -1,0 +1,50 @@
+body {
+  background-image: url('../images/strawberry.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h2 {
+  margin-top: 3%;
+  text-align: center;
+  margin-bottom: 2%;
+}
+
+h3 {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+.div-page {
+  margin-left: 5%;
+}
+
+img {
+  width: 50%;
+  height: 60%;
+  margin-bottom: 5%;
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+  padding-right: 2%;
+}
+
+button {
+  border-radius: 15%;
+  background-color: chocolate;
+}
+
+button > a {
+  color: black;
+}
+
+.buttons {
+  display: inline-flex;
+  justify-content: space-between;
+  transition-duration: 0.4s;
+}
+
+button:hover{
+  background-color: whitesmoke;
+}

@@ -1,9 +1,9 @@
+<link rel="stylesheet" href="/stylesheets/recipes-create.css">
+{{#if user}}
+    <h2>Add a recipe</h2>  
 
-    {{#if user}}
-      <h2>Add a recipe</h2>  
 
-
-    <form action="/recipes/create" method="POST" enctype="multipart/form-data">
+    <form class="form-page" action="/recipes/create" method="POST" enctype="multipart/form-data">
         
         <div class="form-row row">            
             <div class="col-md-6 form-group ml-5 p-3">
@@ -36,16 +36,16 @@
 
         <div class="form-row">
             <div class="form-group mb-3 p-3 ml-4">
-                <label class="control-label">Ingredients (Please seperate each ingredient with a comma) </label>
-                <br>
+                <label class="control-label"> Ingredients </label>
+                <p>Please separate each ingredient with a comma</p>
                 <textarea name="ingredients" rows="5" cols="50" required></textarea>
             </div>
         </div>
 
         <div class="form-row">
             <div class="form-group mb-3 p-3 ml-4">
-                <label class="control-label">Instructions (Please seperate each instruction with a full stop)</label>
-                <br>
+                <label class="control-label">Instructions</label>
+                <p>Please separate each instruction with a full stop</p>
                 <textarea name="method" rows="5" cols="50" required></textarea>
             </div>
         </div>
@@ -90,14 +90,14 @@
         </div>      
 
         <div class="custom-file p-3">
+            <label class="control-label">Upload image</label>
+            <br>
             <input class="custom-file-input" id="customFile" type="file" name="image"/>
         </div>
 
-        <div class="form-group p-3">
-            <button class="btn btn-success" type="submit">Add</button>  
+        <div class="button-add">
+            <button class="btn btn-success" type="submit">Add recipe</button>  
         </div>
     </form>
    
-    {{/if}}
-
-
+{{/if}}

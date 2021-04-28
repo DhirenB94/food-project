@@ -1,19 +1,33 @@
+<link rel="stylesheet" href="/stylesheets/recipes.css">
+
 <h2>List of recipes</h2>
-<a href="/">Home</a>
 <hr>
 
-{{#each recipesFromDB}}
-  <h3>
-    <a href="/recipes/{{id}}">{{name}}</a>
-  </h3>
-  <img src={{pictureUrl}} />
-  <br>
-    {{#if ../user}}
-    <a href="/recipes/{{id}}/edit">Edit</a>
-    <form action="/recipes/{{id}}/delete" method="POST">
-      <button type="submit">Delete</button>
-    </form>
-  {{/if}}
-{{/each}}
+<div class="container">
+  <div class="row">
+    {{#each recipesFromDB}}
+      <div class="col-md-6 p-3">
+        
+        <h3>  <a href="/recipes/{{id}}">{{name}}</a>  </h3>
+        
+        <img src={{pictureUrl}} class="img-thumbnail" alt="food-image" />
+        <br>
+        
+        {{#if ../user}}
+          <div class="col-md-6 buttons">
+            <button><a href="/recipes/{{id}}/edit">Edit</a></button>
+              
+            <form action="/recipes/{{id}}/delete" method="POST">
+              <button type="submit">Delete</button>
+            </form>
+          </div>
+        {{/if}}
+
+      </div>
+    {{/each}}
+  </div>
+
+</div>
+
 
 
