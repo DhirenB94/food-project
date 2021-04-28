@@ -14,19 +14,23 @@
         <br>
         
         {{#if ../user}}
-          <div class="col-md-4 buttons">
-            <button><a href="/recipes/{{id}}/edit">Edit</a></button>
+          <div class="col-md-6 buttons">
+            <button class="btn btn-success"><a href="/recipes/{{id}}/edit">Edit</a></button>
               
             <form action="/recipes/{{id}}/delete" method="POST">
-              <button type="submit">Delete</button>
+              <button class="btn btn-success" type="submit">Delete</button>
             </form>
+
+            <form action="/recipes/{{id}}/favourite" method="POST">
+              <button class="btn btn-success">Add to Favourites</button>
+            </form>
+            
           </div>
         {{/if}}
 
       </div>
     {{/each}}
   </div>
-
 </div>
 
 

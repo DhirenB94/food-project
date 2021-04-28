@@ -43,9 +43,7 @@ const recipeSchema = new Schema ({
       user: String,
       comment: String
     }
-  ]
+  ]  
+});
 
-// by: {{username}}
-
-})
 module.exports = model("Recipe", recipeSchema);

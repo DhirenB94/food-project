@@ -11,7 +11,7 @@ router.get('/recipes', async (req, res)=> {
 
     const user = req.session.currentUser;
 
-    res.render('recipes', {recipesFromDB, user});
+    res.render('recipes/recipes', {recipesFromDB, user});
 
   }catch(e) {
     res.render('error');
@@ -22,7 +22,7 @@ router.get('/recipes', async (req, res)=> {
 //Create and post recipes
 router.get('/recipes/create', async(req, res) => {
   const user = req.session.currentUser;
-  res.render('recipes-create', {user});
+  res.render('recipes/recipes-create', {user});
 });
 
 router.post('/recipes/create', fileUpload.single('image'), async (req, res) => {
@@ -70,7 +70,7 @@ router.get('/recipes/:id', async (req, res) => {
   const user = req.session.currentUser;
   console.log(recipe)
 
-  res.render('recipe-details', {recipe, user});
+  res.render('recipes/recipe-details', {recipe, user});
 });
 
 
@@ -81,7 +81,7 @@ router.get('/recipes/:id/edit', async (req, res) => {
 
   const user = req.session.currentUser;
 
-  res.render('recipe-edit', {recipe, user});
+  res.render('recipes/recipe-edit', {recipe, user});
 });
 
 router.post('/recipes/:id/edit', fileUpload.single('image'), async (req, res) => {
@@ -114,6 +114,7 @@ router.post('/recipes/:id/edit', fileUpload.single('image'), async (req, res) =>
       allergy,
       pictureUrl: req.file.path
     });
+
   } else  {
     await Recipe.findByIdAndUpdate(req.params.id,{
       name, 
@@ -127,7 +128,6 @@ router.post('/recipes/:id/edit', fileUpload.single('image'), async (req, res) =>
       allergy
     });
   }
- 
 
   res.redirect('/recipes');
 
