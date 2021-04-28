@@ -1,0 +1,17 @@
+body {
+  background-image: url('../images/strawberry.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.col-md-12{
+  text-align: center;
+  color: white;
+  margin-top: 5%;
+
+}
+
+.view-review{
+  color:black;
+  font-size: 20px;
+}

@@ -6,7 +6,7 @@
 <div class="container">
   <div class="row">
     {{#each recipesFromDB}}
-      <div class="col-md-6 p-3">
+      <div class="col-md-4 p-3">
         
         <h3>  <a href="/recipes/{{id}}">{{name}}</a>  </h3>
         
@@ -14,7 +14,7 @@
         <br>
         
         {{#if ../user}}
-          <div class="col-md-6 buttons">
+          <div class="col-md-4 buttons">
             <button><a href="/recipes/{{id}}/edit">Edit</a></button>
               
             <form action="/recipes/{{id}}/delete" method="POST">

@@ -68,6 +68,7 @@ router.get('/recipes/:id', async (req, res) => {
   const recipe = await Recipe.findById(req.params.id);
 
   const user = req.session.currentUser;
+  console.log(recipe)
 
   res.render('recipe-details', {recipe, user});
 });
@@ -146,12 +147,10 @@ router.post('/recipes/:id/delete', async (req, res) => {
 //Post reviews
 router.post('/reviews/:id/add', async (req, res) => {
   const recipeId = req.params.id;
-
-  //Need user, comment names in hbs
   const { user, comment } = req.body;
 
   await Recipe.findByIdAndUpdate(recipeId, {
-    $push: { review: { user, comment }}
+    $push: { reviews: { user, comment }}
   });
 
   res.redirect(`/recipes/${recipeId}`);

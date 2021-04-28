@@ -1,0 +1,20 @@
+body {
+  background-image: url('../images/strawberry.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title{
+  text-align: center;
+}
+
+.search-result{
+  margin: 10px 0px;
+  padding: 10px 0px;
+  height: 10%;
+}
+
+.search-image {
+  height:50%;
+  width:50%;
+}

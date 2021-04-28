@@ -30,6 +30,10 @@ a {
   padding-right: 2%;
 }
 
+.col-md-4{
+  text-align: center;
+}
+
 button {
   border-radius: 15%;
   background-color: chocolate;
@@ -41,7 +45,7 @@ button > a {
 
 .buttons {
   display: inline-flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   transition-duration: 0.4s;
 }
 

@@ -1,64 +1,127 @@
+<link rel="stylesheet" href=" /stylesheets/recipe-details.css">
+
+<br>
+
 {{#if user}}
-  <h2>{{recipe.name}}</h2>
-  <img src="{{recipe.pictureUrl}}"/>
 
-  <p>Prep time: {{recipe.prepTime}} || Cooking time: {{recipe.cookTime}} || Serves: {{recipe.serves}}</p>
-  {{#if recipe.cuisine}}
-    Cuisine: {{recipe.cuisine}}
-  {{/if}}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>{{recipe.name}}</h2>
+    </div>
+    <div class="col-md-6">
+      <div class="prep">
+          <p>Prep time: {{recipe.prepTime}} || Cooking time: {{recipe.cookTime}} || Serves: {{recipe.serves}}</p>
+      </div>
 
-  <ul> <h4> Ingredients</h4>
-      {{#each recipe.ingredients}}
-          <li>{{this}}</li>
-      {{/each}}
-  </ul>
+      <div class="cuisine">
+        {{#if recipe.cuisine}}
+          Cuisine: {{recipe.cuisine}}
+        {{/if}}
+      </div>
 
-  <ol> <h4> Instructions</h4>
-      {{#each recipe.method}}
-          <li>{{this}}</li>
-      {{/each}}
-  </ol>
+      <div class="extra-info">
+      {{#if recipe.suitable}}
+        <p>Suitable for:
+          {{#each recipe.suitable}}
+          {{this}}
+          {{/each}}
+        </p>
+      {{/if}}
 
-  {{#if recipe.suitable}}
-    <p>Suitable for:
-      {{#each recipe.suitable}}
-      {{this}}
-      {{/each}}
-    </p>
-  {{/if}}
+      {{#if recipe.allergy}}
+        <p>Allergy Information:
+          {{#each recipe.allergy}}
+          {{this}}
+          {{/each}}
+        </p>
+      {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
+<br><br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="dish-image">
+        <img class="dish-image" src="{{recipe.pictureUrl}}"/>
+      </div>
+    </div>
 
-  {{#if recipe.allergy}}
-    <p>Allergy Information:
-      {{#each recipe.allergy}}
-      {{this}}
-      {{/each}}
-    </p>
-  {{/if}}
+    <div class="col-md-4">
+      <div class="ingredients">
+        <ul> <h4> Ingredients</h4>
+            {{#each recipe.ingredients}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="instructions">
+        <ol> <h4> Instructions</h4>
+            {{#each recipe.method}}
+                <li>{{this}}</li>
+            {{/each}}
+        </ol>
+      </div>
+    </div>
+
+
+  </div>
+</div>
 
   <hr>
 
-  <p><u>Add a review</u></p>
-  <form action="/reviews/{{recipe.id}}/add" method="POST">
-    <label>User</label>
-    <input type="text" name="user"/>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+          <p><u>Add a review</u></p>
+              <div class="add-review">
+                <form action="/reviews/{{recipe.id}}/add" method="POST" class="form-review">
+                  <div class="mb-3">
+                    <label class="form-label">User</label>
+                    <input type="text" name="user" class="form-control" required/>
+                  </div>
 
-    <label>Comment</label>
-    <textarea name="comment"></textarea>
+                  <div class="mb-3">
+                    <label class="form-label">Comment</label>
+                    <textarea name="comment" class="form-control" required></textarea>
+                  </div>
 
-    <button type="submit">Add Review</button>
-  </form>
-  <hr>
-  <h4>Reviews:</h4>
-  {{#each recipe.review}}
-    <p>{{comment}} -- {{user}}</p>
-  {{/each}}
+                  <button type="submit" class="btn btn-primary">Add Review</button>
+                </form>
+              </div>
+      </div>
+
+      <div class="col-md-6">
+          <div class="view-review">
+            <h4>Reviews:</h4>
+            {{#each recipe.reviews}}
+              <p><u>{{user}}</u> said : <br>
+                {{comment}}</p>
+            {{/each}}
+          </div>
+      </div>
+    </div>
+  </div>
+
+
 
 {{else}}
-  <h2>{{recipe.name}}</h2>
-  <img src="{{recipe.pictureUrl}}"/>
-  <br>
-  <br>
-  <p>Please <a href="/login">login</a>  or <a href="/signup">register</a>  to see full recipe</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2>{{recipe.name}}</h2>
+        <img src="{{recipe.pictureUrl}}"/>
+        <br>
+        <br>
+        <p>Please <a href="/login">login</a>  or <a href="/signup">register</a>  to see full recipe</p>
+      </div>
+    </div>
+  </div>
 {{/if}}
 
 

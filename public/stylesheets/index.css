@@ -1,7 +1,7 @@
 body {
-  background-image: url('../images/food-homepage.jpg');
-  background-size: cover;
+  background-image: url('../images/strawberry.jpeg');
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .homepage-box {
@@ -10,7 +10,11 @@ body {
   display: flex;
   flex-direction: column;
   margin-top: 10%;
-  color: rgb(106, 190, 97)
+
+}
+
+.homepage-description {
+  font-size: 20px;
 
 }
 
@@ -20,7 +24,7 @@ body {
 }
 
 .homepage-button{
-  border: solid 1.5px rgb(106, 190, 97);
+  border: solid 1.5px rgb(224, 221, 31);
   font-size: 20px;
   padding: 10px 25px;
   color: white;

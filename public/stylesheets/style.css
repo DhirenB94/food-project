@@ -2,6 +2,7 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; 
 }
 
+
 a {
   color: #00B7FF;
 }
@@ -11,5 +12,8 @@ a {
 }
 
 .login-class{
-  margin: 3%;
+  color: white;
+  position: fixed;
+  bottom: 0px;
+  right: 1%;
 }

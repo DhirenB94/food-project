@@ -32,7 +32,7 @@ const recipeSchema = new Schema ({
   },
   suitable: {
     type: [String],
-    enum : ['Vegetarian', 'Vegan', 'Lactose free', 'Gluten free']
+    enum : ['Vegetarian', 'Vegan', 'Lactose Free', 'Gluten Free']
   },
   allergy: {
     type: [String],
