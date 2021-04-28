@@ -1,13 +1,14 @@
 body {
-  background-image: url('../images/strawberry.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-image: url('../images/heart-food.jpg');
+  background-repeat: repeat;
+  background-size: 100%;
 }
 
 h2 {
   margin-top: 3%;
   text-align: center;
   margin-bottom: 2%;
+  text-shadow: -1px 0 whitesmoke, 0 1px whitesmoke, 1px 0 whitesmoke, 0 -1px whitesmoke;
 }
 
 h3 {
@@ -32,11 +33,10 @@ a {
 
 button {
   border-radius: 15%;
-  background-color: chocolate;
 }
 
 button > a {
-  color: black;
+  color: whitesmoke;
 }
 
 .buttons {
@@ -47,4 +47,9 @@ button > a {
 
 button:hover{
   background-color: whitesmoke;
+  padding: 10px 15px;
+}
+
+button > a:hover {
+  color: whitesmoke;
 }

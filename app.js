@@ -70,6 +70,9 @@ app.locals.title = 'Food Project';
 const index = require('./routes/index');
 app.use('/', index);
 
+const favourite = require('./routes/favourite');
+app.use('/', favourite);
+
 const recipe = require('./routes/recipe');
 app.use('/', recipe);
 
@@ -78,6 +81,7 @@ app.use('/', nutrients);
 
 const auth = require('./routes/auth');
 app.use('/', auth);
+
 
 
 module.exports = app;

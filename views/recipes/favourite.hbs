@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/stylesheets/recipes.css">
+
+<h2>List of Favourite recipes</h2>
+<hr>
+
+<div class="container">
+  {{#each favourites}}
+  <div class="row">
+      <div class="col-md-6 p-3">
+        
+        <h3>  <a href="/recipes/{{recipe.id}}">{{recipe.name}}</a>  </h3>
+        
+        <img src={{recipe.pictureUrl}} class="img-thumbnail" alt="food-image" />
+
+        <form action="/favourites/{{id}}/delete" method="POST">
+            <button class="btn btn-success" type="submit">Remove</button>
+        </form>
+
+      </div>
+
+  </div>
+  {{/each}}
+</div>
