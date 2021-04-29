@@ -15,10 +15,11 @@
         
         {{#if ../user}}
           <div class="col-md-6 buttons">
-            <button class="btn btn-success"><a href="/recipes/{{id}}/edit">Edit</a></button>
+
+            <button class="btn btn-success mr-2 mb-2"><a href="/recipes/{{id}}/edit">Edit</a></button>
               
             <form action="/recipes/{{id}}/delete" method="POST">
-              <button class="btn btn-success" type="submit">Delete</button>
+              <button class="btn btn-success mr-2 mb-2" type="submit">Delete</button>
             </form>
 
             <form action="/recipes/{{id}}/favourite" method="POST">
@@ -34,4 +35,4 @@
 </div>
 
 
-
+<br>

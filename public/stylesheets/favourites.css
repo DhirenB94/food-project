@@ -1,7 +1,8 @@
 body {
-  background-image: url('../images/maybe5.jpg');
-    background-repeat: round;
-    background-size: cover;
+  background-image: url('../images/table-back.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
 }
 
 h2 {
@@ -47,7 +48,6 @@ button > a {
   display: inline-flex;
   justify-content: space-evenly;
   transition-duration: 0.4s;
-  flex-wrap: wrap;
 }
 
 button:hover{

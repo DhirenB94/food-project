@@ -1,7 +1,7 @@
 body {
   background-image: url('../images/maybe5-rotatedbottom.jpg');
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
 }
 
 .col-md-12{
@@ -20,4 +20,8 @@ body {
 .username{
   color: tomato;
   font-weight: bold;
+}
+
+.dish-image {
+  width: fit-content;
 }

@@ -1,11 +1,11 @@
-<link rel="stylesheet" href="/stylesheets/recipes.css">
+<link rel="stylesheet" href="/stylesheets/favourites.css">
 
 <h2>List of Favourite recipes</h2>
 <hr>
 
 <div class="container">
-  {{#each favourites}}
   <div class="row">
+  {{#each favourites}}
       <div class="col-md-6 p-3">
         
         <h3>  <a href="/recipes/{{recipe.id}}">{{recipe.name}}</a>  </h3>
@@ -17,7 +17,7 @@
         </form>
 
       </div>
-
+    {{/each}}
   </div>
-  {{/each}}
 </div>
+<br>
