@@ -1,5 +1,5 @@
 body {
-  background-image: url('../images/matucha12170200075.jpg');
+  background-image: url('../images/maybe5-rotated.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -24,11 +24,15 @@ body {
 }
 
 .homepage-button{
-  border: solid 1.5px rgb(224, 221, 31);
+  border: solid 2px tomato;
   font-size: 20px;
   padding: 10px 25px;
   color: white;
   margin-left:40%;
   margin-right:40%;
-  text-decoration: none;
+  text-decoration: none;  
+}
+
+.homepage-button:hover {
+  color: tomato;
 }

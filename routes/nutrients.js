@@ -15,7 +15,7 @@ router.get('/food-search', async (req, res, next) => {
     console.log('foodsearch', foodSearch);
     const food = await client.search({query: foodSearch});
     console.log('result', food);
-    res.render('food-search-results', {foods: food.hints, user: req.session.currentUser});
+    res.render('recipes/food-search-results', {foods: food.hints, user: req.session.currentUser});
     
     console.log(food.hints.label);
 

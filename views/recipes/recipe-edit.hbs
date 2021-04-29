@@ -1,56 +1,54 @@
 <link rel="stylesheet" href="/stylesheets/recipes-create.css">
 
 {{#if user}}
-    <h2>Edit {{recipe.name}}</h2>
+    <h2>Edit: <span class="recipe-name">{{recipe.name}}</span></h2>
 
     <form class="form-page" action="/recipes/{{recipe.id}}/edit" method="POST" enctype="multipart/form-data" >
         
         <div class="form-row row">
             <div class="col-md-6 form-group ml-5 p-3">
-                <label>Title of Dish</label>
+                <label><b>Title of Dish</b></label>
                 <input type="text" name="name" value="{{recipe.name}}" />
             </div>
 
             <div class="col-md-6 mb-3 form-group p-3">
-                <label>Cusine</label>
+                <label><b>Cusine</b></label>
                 <input type="text" name="cuisine" value="{{recipe.cuisine}}"/>
             </div>
         </div>
         
         <div class="form-row row">
             <div class="col-md-4 mb-3 form-group p-3 ml-4">
-                <label>Prep Time</label>
+                <label><b>Prep Time</b></label>
                 <input type="text" name="prepTime" value="{{recipe.prepTime}}" />
             </div>
             <div class="col-md-4 mb-3 form-group p-3 ml-4">
-                <label> Cook time</label>
+                <label><b>Cook time</b></label>
                 <input type="text" name="cookTime" value="{{recipe.cookTime}}" />
             </div>
             <div class="col-md-4 mb-3 form-group p-3 ml-4">
-                <label>Serves</label>
+                <label><b>Serves</b></label>
                 <input type="number" name="serves" value="{{recipe.serves}}"/>
             </div>
         </div>
 
-        <div class="form-row">
-            <div class="form-group mb-3 p-3 ml-4">
-                <label class="control-label">Ingredients</label>
-                <p>Please separate each ingredient with a comma</p>
-                <textarea name="ingredients" rows="5" cols="50" >{{recipe.ingredients}}</textarea>
+        <div class="form-row row">
+            <div class="form-group mb-3 p-3 ml-4 col-md-6">
+                <label class="control-label"><b>Ingredients</b></label>
+                <p>(Please separate each ingredient with a comma)</p>
+                <textarea name="ingredients" rows="8" cols="75" >{{recipe.ingredients}}</textarea>
             </div>
-        </div>
 
-        <div class="form-row">
-            <div class="form-group mb-3 p-3 ml-4">
-                <label class="control-label">Instructions</label>
-                <p>Please separate each instruction with a full stop</p>
-                <textarea name="method" rows="5" cols="50" >{{recipe.method}}</textarea>
+            <div class="form-group mb-3 p-3 ml-4 col-md-6">
+                <label class="control-label"><b>Instructions</b></label>
+                <p>(Please separate each instruction with a full stop)</p>
+                <textarea name="method" rows="8" cols="75" >{{recipe.method}}</textarea>
             </div>
         </div>
 
 
         <div class="form-check col-md-3 mb-3">
-            <label class="control-label">Suitable for:</label>
+            <label class="control-label"><b>Suitable for:</b></label>
             <br>
             <div class="form-check form-check-inline">
                 <label class="form-check-label" for="inlineCheckbox1">Vegetarian</label>
@@ -74,7 +72,7 @@
         </div>  
 
         <div class="form-check col-md-3 mb-3">
-            <label class="control-label">Allergy Information:</label>
+            <label class="control-label"><b>Allergy Information:</b></label>
             <br>
 
             <div class="form-check form-check-inline">
@@ -89,7 +87,7 @@
         </div>      
 
         <div class="custom-file p-3">
-            <label class="control-label">Upload image</label>
+            <label class="control-label"><b>Upload image</b></label>
             <br>
             <input class="custom-file-input" id="customFile" type="file" name="image"/>
         </div>

@@ -1,5 +1,5 @@
 body {
-  background-image: url('../images/bac-img2.jpg');
+  background-image: url('../images/maybe5-rotated.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -17,4 +17,8 @@ h2 {
 
 .button-add {
   text-align: center;
+}
+
+.recipe-name{
+  color: tomato;
 }

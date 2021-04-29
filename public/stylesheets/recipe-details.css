@@ -1,7 +1,7 @@
 body {
-  background-image: url('../images/back-img.jpg');
+  background-image: url('../images/maybe5-rotatedbottom.jpg');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100%;
 }
 
 .col-md-12{
@@ -14,4 +14,10 @@ body {
 .view-review{
   color:black;
   font-size: 20px;
+  font-weight: lighter;
+}
+
+.username{
+  color: tomato;
+  font-weight: bold;
 }

@@ -40,7 +40,10 @@
     </div>
   </div>
 </div>
-<br><br>
+
+<hr>
+<br>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-4">
@@ -51,7 +54,7 @@
 
     <div class="col-md-4">
       <div class="ingredients">
-        <ul> <h4> Ingredients</h4>
+        <ul> <h3> <u>Ingredients</u></h3>
             {{#each recipe.ingredients}}
                 <li>{{this}}</li>
             {{/each}}
@@ -61,7 +64,7 @@
 
     <div class="col-md-3">
       <div class="instructions">
-        <ol> <h4> Instructions</h4>
+        <ol> <h3> <u>Instructions</u></h3>
             {{#each recipe.method}}
                 <li>{{this}}</li>
             {{/each}}
@@ -72,7 +75,7 @@
 
   </div>
 </div>
-
+  <br>
   <hr>
 
   <div class="container-fluid">
@@ -100,7 +103,7 @@
           <div class="view-review">
             <h4>Reviews:</h4>
             {{#each recipe.reviews}}
-              <p><u>{{user}}</u> said : <br>
+              <p> <span class="username">{{user}}</span> said :
                 {{comment}}</p>
             {{/each}}
           </div>
