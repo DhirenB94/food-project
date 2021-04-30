@@ -75,12 +75,24 @@
 
   {{{body}}}
 
-<div class="login-class">
-  {{#if user}}
-  <p>You are logged in as {{user.username}}</p>
-  {{/if}}
-</div>
 
   <script src="/javascripts/script.js"></script>
+<br>
+<br>
+  <footer class="footer">
+    <p> &copy <span id='copyright'></span> | Made with 🍅 by Ironhackers Dhiren and Patrícia</p>
+    <script>
+        fetch('http://worldclockapi.com/api/json/utc/now')
+          .then(data => data.json())
+          .then(d => 
+          document.getElementById('copyright').innerHTML = (new Date(d.currentDateTime).getFullYear()));
+    </script>
+
+    <div class="login-class">
+      {{#if user}}
+      <p>You are logged in as {{user.username}}</p>
+      {{/if}}
+    </div>
+  </footer>
 </body>
 </html>
