@@ -82,7 +82,7 @@
   <footer class="footer">
     <p> &copy <span id='copyright'></span> | Made with 🍅 by Ironhackers Dhiren and Patrícia</p>
     <script>
-        fetch('http://worldclockapi.com/api/json/utc/now')
+        fetch('https://worldclockapi.com/api/json/utc/now')
           .then(data => data.json())
           .then(d => 
           document.getElementById('copyright').innerHTML = (new Date(d.currentDateTime).getFullYear()));
